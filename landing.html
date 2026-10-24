@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nicanor Pujol — Soluciones digitales</title>
+  <meta name="description" content="Nicanor Pujol, estudiante de Ingeniería en Sistemas de Información (UCP). Soluciones digitales innovadoras: desarrollo web, sistemas a medida y automatización.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fafaf9;
+      --text: #1c1917;
+      --muted: #78716c;
+      --line: #e7e5e4;
+      --accent: #1c1917;
+      --accent-text: #fafaf9;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0c0a09;
+        --text: #f5f5f4;
+        --muted: #a8a29e;
+        --line: #292524;
+        --accent: #f5f5f4;
+        --accent-text: #0c0a09;
+      }
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "Inter", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+    a { color: inherit; text-decoration: none; }
+
+    /* Nav */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 0;
+    }
+    .logo { font-weight: 600; letter-spacing: -0.02em; font-size: 1.1rem; }
+    .nav-links { display: flex; gap: 28px; font-size: 0.95rem; color: var(--muted); }
+    .nav-links a:hover { color: var(--text); }
+
+    /* Hero */
+    .hero { padding: 120px 0 100px; }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      color: var(--muted);
+      border: 1px solid var(--line);
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 28px;
+    }
+    .dot { width: 6px; height: 6px; border-radius: 50%; background: #22c55e; }
+    h1 {
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      font-weight: 600;
+      line-height: 1.1;
+      letter-spacing: -0.035em;
+      max-width: 16ch;
+    }
+    .hero p {
+      margin-top: 24px;
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 52ch;
+    }
+    .actions { margin-top: 40px; display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: opacity .2s;
+    }
+    .btn:hover { opacity: .8; }
+    .btn-primary { background: var(--accent); color: var(--accent-text); }
+    .btn-ghost { border: 1px solid var(--line); }
+
+    /* Section titles */
+    .section-label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding-top: 64px;
+    }
+
+    /* About */
+    .about { border-top: 1px solid var(--line); padding-bottom: 64px; }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 48px;
+      margin-top: 24px;
+    }
+    .about h2 { font-size: 1.6rem; font-weight: 600; letter-spacing: -0.02em; line-height: 1.25; }
+    .about p { color: var(--muted); }
+    .about p + p { margin-top: 16px; }
+
+    /* Services */
+    .services-wrap { border-top: 1px solid var(--line); }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+    .feature { padding: 32px 32px 64px 0; }
+    .feature span { font-size: 0.8rem; color: var(--muted); }
+    .feature h3 { margin: 12px 0 8px; font-weight: 600; font-size: 1.1rem; }
+    .feature p { color: var(--muted); font-size: 0.95rem; }
+
+    /* CTA */
+    .cta {
+      border-top: 1px solid var(--line);
+      padding: 100px 0;
+      text-align: center;
+    }
+    .cta h2 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 600;
+      letter-spacing: -0.03em;
+    }
+    .cta p { color: var(--muted); margin: 16px auto 32px; max-width: 42ch; }
+    .cta .actions { justify-content: center; margin-top: 0; }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 32px 0;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 700px) {
+      .nav-links { display: none; }
+      .hero { padding: 72px 0 64px; }
+      .about-grid { grid-template-columns: 1fr; gap: 20px; }
+      .feature { padding: 28px 0 28px; }
+      .features { padding-bottom: 36px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <a href="#" class="logo">Nicanor Pujol</a>
+      <div class="nav-links">
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <span class="tag"><span class="dot"></span> Disponible para nuevos proyectos</span>
+      <h1>Soluciones digitales innovadoras.</h1>
+      <p>Transformamos ideas en herramientas concretas: sitios web, sistemas a medida y automatizaciones que hacen tu trabajo más simple.</p>
+      <div class="actions">
+        <a href="#contacto" class="btn btn-primary">Hablemos</a>
+        <a href="#servicios" class="btn btn-ghost">Ver servicios</a>
+      </div>
+    </section>
+
+    <section class="about" id="sobre-mi">
+      <p class="section-label">Sobre mí</p>
+      <div class="about-grid">
+        <h2>Estudiante de Ingeniería en Sistemas de Información en la UCP.</h2>
+        <div>
+          <p>Soy Nicanor Pujol, de Resistencia, Chaco. Combino la formación académica con proyectos reales para ofrecer soluciones tecnológicas pensadas a la medida de cada necesidad.</p>
+          <p>Me interesa entender el problema antes de escribir código: escuchar, proponer y construir algo que realmente sirva.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="services-wrap" id="servicios">
+      <p class="section-label">Servicios</p>
+      <div class="features">
+        <div class="feature">
+          <span>01</span>
+          <h3>Desarrollo web</h3>
+          <p>Landing pages y sitios rápidos, modernos y adaptados a cualquier dispositivo.</p>
+        </div>
+        <div class="feature">
+          <span>02</span>
+          <h3>Sistemas a medida</h3>
+          <p>Aplicaciones para gestionar stock, clientes, turnos o lo que tu negocio necesite.</p>
+        </div>
+        <div class="feature">
+          <span>03</span>
+          <h3>Automatización</h3>
+          <p>Menos tareas repetitivas y más tiempo para lo importante.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contacto">
+      <h2>¿Tenés una idea? Hagámosla realidad.</h2>
+      <p>Escribime por mail o WhatsApp y te respondo a la brevedad.</p>
+      <div class="actions">
+        <a href="mailto:nicanorpujol1@gmail.com" class="btn btn-primary">nicanorpujol1@gmail.com</a>
+        <a href="https://wa.me/5493624123599" target="_blank" rel="noopener" class="btn btn-ghost">WhatsApp 362 412-3599</a>
+      </div>
+    </section>
+
+    <footer>
+      <span>© 2026 Nicanor Pujol</span>
+      <span>Resistencia, Chaco</span>
+    </footer>
+  </div>
+</body>
+</html>
